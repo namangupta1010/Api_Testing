@@ -11,5 +11,6 @@ public class Post_data {
 		Response resp =RestAssured.get("");
 		int code =resp.getStatusCode();
 		System.out.println(code);
+         //RestAssured.ge
 	}
 }
