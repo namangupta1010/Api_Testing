@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="6407" started-at="2019-01-27T03:59:52Z" finished-at="2019-01-27T03:59:58Z">
+  <suite name="Default suite" duration-ms="6936" started-at="2019-01-27T13:01:22Z" finished-at="2019-01-27T13:01:29Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="6407" started-at="2019-01-27T03:59:52Z" finished-at="2019-01-27T03:59:58Z">
-      <class name="postRequest.Post_data">
-        <test-method status="PASS" signature="testResponse()[pri:0, instance:postRequest.Post_data@7823a2f9]" name="testResponse" duration-ms="6361" started-at="2019-01-27T03:59:52Z" finished-at="2019-01-27T03:59:58Z">
+    <test name="Default test" duration-ms="6936" started-at="2019-01-27T13:01:22Z" finished-at="2019-01-27T13:01:29Z">
+      <class name="api_package.Post_data">
+        <test-method status="PASS" signature="testResponse()[pri:0, instance:api_package.Post_data@7823a2f9]" name="testResponse" duration-ms="6890" started-at="2019-01-27T13:01:22Z" finished-at="2019-01-27T13:01:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testResponse -->
-      </class> <!-- postRequest.Post_data -->
+      </class> <!-- api_package.Post_data -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
