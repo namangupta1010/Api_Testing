@@ -1,8 +1,10 @@
-package postRequest;
+package api_package;
 
 import java.io.File;
 
 import java.io.FileNotFoundException;
+
+import org.junit.runner.Request;
 import org.testng.annotations.Test;
 
 import io.restassured.RestAssured;
@@ -22,8 +24,11 @@ public class Post_data {
 		
 		Response response =request.post("https://api.shipengine.com/v1/rates");
 		System.out.println(response.getStatusCode());
-		System.out.println(response.asString());
+		System.out.println(response.getBody().asString());
 		/*JSONObject json = new JSONObject();
 		json.*/
+		
+		
+	
 	}
 }
