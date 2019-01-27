@@ -1,6 +1,6 @@
 package api_package;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 import org.testng.Assert;
@@ -30,11 +30,16 @@ public class Get_data {
 		//Assert.assertEquals(response.getBody().asString().contains("Shippy"), true);
 		
 		
-		JsonPath jsonPathEvaluator = response.jsonPath();
-		List<Object> names=new ArrayList<Object>();
-		  names =jsonPathEvaluator.get("name");
-		System.out.println(names.size());
+		/*JsonPath jsonPathEvaluator = response.jsonPath();
+		//List<Object> names=new ArrayList<Object>();
+		List<String>  names =jsonPathEvaluator.getList("name");*/
 		
+		
+		JsonPath jsonPathEvaluator = response.jsonPath();
+		System.out.println(jsonPathEvaluator.get("carrier_id"));
+		List <Object> names =jsonPathEvaluator.getList("name");
+		for(Object nameJson : names)
+			System.out.println(nameJson);
 		
 		System.out.println(response.getBody().asString());
 	}
