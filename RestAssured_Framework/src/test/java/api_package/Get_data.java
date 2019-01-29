@@ -1,8 +1,13 @@
 package api_package;
 
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -33,15 +38,42 @@ public class Get_data {
 		/*JsonPath jsonPathEvaluator = response.jsonPath();
 		//List<Object> names=new ArrayList<Object>();
 		List<String>  names =jsonPathEvaluator.getList("name");*/
-		
+		//System.out.println(response.getHeaders());
+		System.out.println(response.getBody().asString());
+
 		
 		JsonPath jsonPathEvaluator = response.jsonPath();
-		System.out.println(jsonPathEvaluator.get("carrier_id"));
-		List <Object> names =jsonPathEvaluator.getList("name");
-		for(Object nameJson : names)
-			System.out.println(nameJson);
+		System.out.println("Shp To "+jsonPathEvaluator.get("ship_to").toString());
+		System.out.println("List "+jsonPathEvaluator.getMap("$"));
+		Map map=jsonPathEvaluator.getMap("$");
+		for(Object key:map.keySet()) {
+
+			if(map.get(key) instanceof Map) {
+				Map innermap=(Map) map.get(key);
+				//		for(Object innerKey:innermap.keySet()) {
+				//		System.out.println("value "+innermap.get(innerKey));
+				//		}
+				System.out.println(key+" name "+innermap.get("name"));
+			}
+
+		}
+
 		
-		System.out.println(response.getBody().asString());
+		
+		System.out.println(jsonPathEvaluator.get("carrier_id"));
+		System.out.println(jsonPathEvaluator.getList("name"));
+		//System.out.println(jsonPathEvaluator.get("ship_to.address_line"));
+		
+		
+		
+//		hm = jsonPathEvaluator.getMap("carrier_id");
+		
+//		for(Entry m :jsonObject.)
+//		{
+//			System.out.println(m.getKey() + "=" + m.getValue());
+//		}
+		
+		
 	}
 
 }
